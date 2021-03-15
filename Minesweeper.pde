@@ -147,9 +147,12 @@ public class MSButton
     public void mousePressed ()
     {
         clicked = true;
-        if (mouseButton == RIGHT) flagged = !flagged;
-        else if (mines.contains(this)) displayLosingMessage();
-        else if (countMines(myRow, myCol)>0) setLabel(countMines(myRow, myCol));
+        if (mouseButton == RIGHT) 
+            flagged = !flagged;
+        else if (mines.contains(this)) 
+            displayLosingMessage();
+        else if (countMines(myRow, myCol)>0) 
+            setLabel(countMines(myRow, myCol));
         else {
             if (isValid(myRow, myCol-1) && !buttons[myRow][myCol-1].isClicked() && !mines.contains(buttons[myRow][myCol-1])) buttons[myRow][myCol-1].mousePressed();
             if (isValid(myRow, myCol+1) && !buttons[myRow][myCol+1].isClicked() && !mines.contains(buttons[myRow][myCol+1])) buttons[myRow][myCol+1].mousePressed();
